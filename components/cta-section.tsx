@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { FadeIn } from '@/components/fade-in'
 import { Send, CheckCircle2 } from 'lucide-react'
 
 export function CTASection() {
@@ -15,7 +15,7 @@ export function CTASection() {
     city: '',
   })
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
@@ -41,78 +41,52 @@ export function CTASection() {
 
           {/* Left — Headline */}
           <div className="lg:sticky lg:top-24">
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 mb-6"
-            >
-              <span className="w-6 h-px bg-[#C9A96E]" />
-              <span className="text-[#C9A96E] text-xs font-medium tracking-[0.2em] uppercase">
-                Fale conosco
-              </span>
-            </motion.div>
+            <FadeIn delay={0}>
+              <div className="inline-flex items-center gap-2 mb-6">
+                <span className="w-6 h-px bg-[#C9A96E]" />
+                <span className="text-[#C9A96E] text-xs font-medium tracking-[0.2em] uppercase">
+                  Fale conosco
+                </span>
+              </div>
+            </FadeIn>
 
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.1 }}
-              className="text-4xl lg:text-5xl xl:text-6xl font-serif font-bold text-white leading-[1.1] text-pretty mb-6"
-            >
-              Vamos construir um crescimento previsível para sua clínica?
-            </motion.h2>
+            <FadeIn delay={100}>
+              <h2 className="text-4xl lg:text-5xl xl:text-6xl font-serif font-bold text-white leading-[1.1] text-pretty mb-6">
+                Vamos construir um crescimento previsível para sua clínica?
+              </h2>
+            </FadeIn>
 
-            <motion.p
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-white/50 text-base leading-relaxed mb-10"
-            >
-              Agende um diagnóstico estratégico e descubra onde estão as oportunidades
-              de crescimento para a sua clínica ou consultório.
-            </motion.p>
+            <FadeIn delay={200}>
+              <p className="text-white/50 text-base leading-relaxed mb-10">
+                Agende um diagnóstico estratégico e descubra onde estão as oportunidades
+                de crescimento para a sua clínica ou consultório.
+              </p>
+            </FadeIn>
 
             {/* Trust signals */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.35 }}
-              className="flex flex-col gap-3"
-            >
-              {[
-                'Diagnóstico 100% gratuito e sem compromisso',
-                'Planejamento personalizado em até 48h',
-                'Atendimento por especialistas em marketing médico',
-              ].map((item) => (
-                <div key={item} className="flex items-center gap-3">
-                  <CheckCircle2 size={15} className="text-[#C9A96E] shrink-0" />
-                  <p className="text-white/60 text-sm">{item}</p>
-                </div>
-              ))}
-            </motion.div>
+            <FadeIn delay={300}>
+              <div className="flex flex-col gap-3">
+                {[
+                  'Diagnóstico 100% gratuito e sem compromisso',
+                  'Planejamento personalizado em até 48h',
+                  'Atendimento por especialistas em marketing médico',
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-3">
+                    <CheckCircle2 size={15} className="text-[#C9A96E] shrink-0" />
+                    <p className="text-white/60 text-sm">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </FadeIn>
           </div>
 
           {/* Right — Form */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.15 }}
-          >
+          <FadeIn delay={200} direction="right">
             {submitted ? (
               <div className="bg-white/5 border border-white/10 rounded-3xl p-10 flex flex-col items-center text-center gap-5">
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ type: 'spring', stiffness: 200 }}
-                  className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center"
-                >
+                <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center">
                   <CheckCircle2 size={30} className="text-green-400" />
-                </motion.div>
+                </div>
                 <h3 className="text-white font-serif font-bold text-2xl">Solicitação recebida!</h3>
                 <p className="text-white/50 text-sm leading-relaxed max-w-sm">
                   Nossa equipe entrará em contato em até 24 horas para agendar seu
@@ -228,7 +202,7 @@ export function CTASection() {
                 </p>
               </form>
             )}
-          </motion.div>
+          </FadeIn>
         </div>
       </div>
     </section>

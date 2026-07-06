@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { FadeIn } from '@/components/fade-in'
 import { BarChart2, Layers, Target, Headphones, PieChart, RefreshCcw } from 'lucide-react'
 
 const cards = [
@@ -48,52 +48,38 @@ export function Differentials() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
         <div className="max-w-2xl mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 mb-6"
-          >
-            <span className="w-6 h-px bg-[#C9A96E]" />
-            <span className="text-[#C9A96E] text-xs font-medium tracking-[0.2em] uppercase">
-              Nosso diferencial
-            </span>
-          </motion.div>
+          <FadeIn delay={0}>
+            <div className="inline-flex items-center gap-2 mb-6">
+              <span className="w-6 h-px bg-[#C9A96E]" />
+              <span className="text-[#C9A96E] text-xs font-medium tracking-[0.2em] uppercase">
+                Nosso diferencial
+              </span>
+            </div>
+          </FadeIn>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-4xl lg:text-5xl font-serif font-bold text-[#0D2625] leading-[1.15] text-pretty"
-          >
-            O que nos torna diferentes.
-          </motion.h2>
+          <FadeIn delay={100}>
+            <h2 className="text-4xl lg:text-5xl font-serif font-bold text-[#0D2625] leading-[1.15] text-pretty">
+              O que nos torna diferentes.
+            </h2>
+          </FadeIn>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {cards.map((card, i) => (
-            <motion.div
-              key={card.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              whileHover={{ y: -4, boxShadow: '0 20px 40px rgba(13,38,37,0.08)' }}
-              className="group bg-white rounded-2xl p-7 border border-[#E8E6E0] transition-all duration-300 cursor-default"
-            >
-              <div className="w-10 h-10 rounded-xl bg-[#0D2625]/5 flex items-center justify-center mb-5 group-hover:bg-[#0D2625] transition-colors duration-300">
-                <card.icon
-                  size={18}
-                  className="text-[#0D2625] group-hover:text-white transition-colors duration-300"
-                />
+            <FadeIn key={card.title} delay={i * 80}>
+              <div className="group bg-white rounded-2xl p-7 border border-[#E8E6E0] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-default h-full">
+                <div className="w-10 h-10 rounded-xl bg-[#0D2625]/5 flex items-center justify-center mb-5 group-hover:bg-[#0D2625] transition-colors duration-300">
+                  <card.icon
+                    size={18}
+                    className="text-[#0D2625] group-hover:text-white transition-colors duration-300"
+                  />
+                </div>
+                <h3 className="text-[#0D2625] font-semibold text-base mb-2 leading-snug">
+                  {card.title}
+                </h3>
+                <p className="text-[#9CA3AF] text-sm leading-relaxed">{card.description}</p>
               </div>
-              <h3 className="text-[#0D2625] font-semibold text-base mb-2 leading-snug">
-                {card.title}
-              </h3>
-              <p className="text-[#9CA3AF] text-sm leading-relaxed">{card.description}</p>
-            </motion.div>
+            </FadeIn>
           ))}
         </div>
       </div>

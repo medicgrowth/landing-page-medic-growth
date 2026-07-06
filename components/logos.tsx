@@ -18,7 +18,7 @@ export function Logos() {
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0 }}
           transition={{ duration: 0.5 }}
           className="text-center text-xs font-medium tracking-[0.2em] uppercase text-[#9CA3AF] mb-10"
         >
@@ -31,7 +31,7 @@ export function Logos() {
               key={client.name}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0 }}
               transition={{ duration: 0.4, delay: i * 0.07 }}
               className="group"
             >
