@@ -60,7 +60,7 @@ export function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex flex-col overflow-hidden bg-[#0D2625]"
+      className="relative min-h-screen flex flex-col overflow-hidden bg-[#0D2625] pb-32"
       aria-label="Hero — Medic Growth"
     >
       {/* Background texture */}
