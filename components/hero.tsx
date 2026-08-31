@@ -175,7 +175,7 @@ export function Hero() {
                     className="w-10 h-10 rounded-full object-cover border-2 border-[#0D2625] -ml-3"
                   />
                 </div>
-                <p className="text-white/30 text-xs tracking-wide">Confiado por médicos e clínicas</p>
+                <p className="text-white/30 text-xs tracking-wide">A escolha de clínicas com mais de 30 anos de história.</p>
               </motion.div>
             </div>
 
