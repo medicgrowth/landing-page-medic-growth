@@ -106,11 +106,9 @@ export function Hero() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                className="text-4xl sm:text-5xl lg:text-6xl xl:text-[4.25rem] font-serif font-bold text-white leading-[1.1] tracking-tight text-pretty"
+                className="text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-[3.5rem] font-serif font-bold text-white leading-[1.1] tracking-tight text-pretty"
               >
-                Marketing que gera{' '}
-                <span className="text-[#C9A96E]">pacientes particulares,</span>{' '}
-                não apenas leads.
+                Otimize a jornada e atraia pacientes particulares, sem achismos.
               </motion.h1>
 
               {/* Subheadline */}
@@ -120,8 +118,7 @@ export function Hero() {
                 transition={{ duration: 0.7, delay: 0.35 }}
                 className="text-white/60 text-base lg:text-lg leading-relaxed max-w-lg"
               >
-                A Medic Growth integra Marketing, CRM e Inteligência Comercial para
-                transformar investimento em crescimento previsível para clínicas e médicos.
+                A Medic Growth integra Marketing e Inteligência Comercial para transformar investimento em crescimento previsível para clínicas e médicos.
               </motion.p>
 
               {/* CTA Buttons */}
@@ -154,15 +151,32 @@ export function Hero() {
                 </a>
               </motion.div>
 
-              {/* Trust line */}
-              <motion.p
+              {/* Social proof */}
+              <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.7 }}
-                className="text-white/30 text-xs tracking-wide"
+                className="flex items-center gap-3"
               >
-                Confiado por médicos e clínicas em todo o Brasil
-              </motion.p>
+                <div className="flex items-center pl-3" aria-label="Clientes da Medic Growth">
+                  <img
+                    src="https://medicgrowth.com.br/midias/perfil-clientes-medic-growth_one.png"
+                    alt="Cliente da Medic Growth"
+                    className="w-10 h-10 rounded-full object-cover border-2 border-[#0D2625] -ml-3"
+                  />
+                  <img
+                    src="https://medicgrowth.com.br/midias/perfil-clientes-medic-growth_two.png"
+                    alt="Cliente da Medic Growth"
+                    className="w-10 h-10 rounded-full object-cover border-2 border-[#0D2625] -ml-3"
+                  />
+                  <img
+                    src="https://medicgrowth.com.br/midias/perfil-clientes-medic-growth_three.png"
+                    alt="Cliente da Medic Growth"
+                    className="w-10 h-10 rounded-full object-cover border-2 border-[#0D2625] -ml-3"
+                  />
+                </div>
+                <p className="text-white/30 text-xs tracking-wide">Confiado por médicos e clínicas</p>
+              </motion.div>
             </div>
 
             {/* Right Column — Dashboard Mockup + Floating Cards */}
@@ -178,7 +192,7 @@ export function Hero() {
                 <div className="flex items-center justify-between mb-6">
                   <div>
                     <p className="text-white/40 text-xs tracking-wide uppercase">Dashboard</p>
-                    <p className="text-white font-semibold mt-0.5">Visão Geral — Julho</p>
+                    <p className="text-white font-semibold mt-0.5">Visão Geral</p>
                   </div>
                   <span className="flex items-center gap-1.5 bg-green-500/10 text-green-400 text-xs font-medium px-2.5 py-1 rounded-full">
                     <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
