@@ -164,12 +164,12 @@ export function Hero() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram da Dra. Leticia"
-                    className="relative z-10"
+                    className="relative z-10 shrink-0"
                   >
                     <img
                       src="https://medicgrowth.com.br/midias/perfil-clientes-medic-growth_one.png"
                       alt="Dra. Leticia"
-                      className="w-10 h-10 rounded-full object-cover border-2 border-white first:ml-0 z-10"
+                      className="w-10 h-10 rounded-full object-cover border-2 border-[#0D2625] shrink-0"
                     />
                   </a>
                   <a
@@ -177,12 +177,12 @@ export function Hero() {
                     target="_blank"
                     rel="noopener noreferrer"
 aria-label="Instagram da BV Dermatologia"
-                    className="relative z-20"
+                    className="relative z-20 shrink-0 -ml-3"
                   >
                     <img
                       src="https://medicgrowth.com.br/midias/perfil-clientes-medic-growth_two.png"
                       alt="BV Dermatologia"
-                      className="w-10 h-10 rounded-full object-cover border-2 border-white -ml-3 z-20"
+                      className="w-10 h-10 rounded-full object-cover border-2 border-[#0D2625] shrink-0"
                     />
                   </a>
                   <a
@@ -190,12 +190,12 @@ aria-label="Instagram da BV Dermatologia"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram da PhysioPlace"
-                    className="relative z-30"
+                    className="relative z-30 shrink-0 -ml-3"
                   >
                     <img
                       src="https://medicgrowth.com.br/midias/perfil-clientes-medic-growth_three.png"
                       alt="PhysioPlace - Dr Mauricio"
-                      className="w-10 h-10 rounded-full object-cover border-2 border-white -ml-3 z-30"
+                      className="w-10 h-10 rounded-full object-cover border-2 border-[#0D2625] shrink-0"
                     />
                   </a>
                   <a
@@ -203,12 +203,12 @@ aria-label="Instagram da BV Dermatologia"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram da Dra. Iana Simão"
-                    className="relative z-40"
+                    className="relative z-40 shrink-0 -ml-3"
                   >
                     <img
                       src="https://medicgrowth.com.br/wp-content/uploads/2026/09/perfil-clientes-medic-growth-for.png"
                       alt="Dra. Iana Simão"
-                      className="w-10 h-10 rounded-full object-cover border-2 border-white -ml-3 z-40"
+                      className="w-10 h-10 rounded-full object-cover border-2 border-[#0D2625] shrink-0"
                     />
                   </a>
                 </div>
