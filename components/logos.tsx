@@ -1,7 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
-
 const clients = [
   {
     name: 'UFRJ',
@@ -39,37 +37,29 @@ export function Logos() {
   return (
     <section className="bg-white border-b border-[#E8E6E0] py-14 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center text-xs font-medium tracking-[0.2em] uppercase text-[#9CA3AF] mb-10"
-        >
+        <p className="text-center text-xs font-medium tracking-[0.2em] uppercase text-[#9CA3AF] mb-10">
           Clientes que já confiam
-        </motion.p>
+        </p>
 
-        <div className="flex flex-wrap items-center justify-center gap-10">
-          {clients.map((client, i) => (
-            <motion.a
-              key={client.name}
-              href={client.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Instagram de ${client.name}`}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0 }}
-              transition={{ duration: 0.4, delay: i * 0.07 }}
-              className="block opacity-50 hover:opacity-100 transition-opacity duration-300"
-            >
-              <img
-                src={client.image}
-                alt={`Logo ${client.name}`}
-                className="h-[55px] w-auto object-contain"
-              />
-            </motion.a>
-          ))}
+        <div className="overflow-hidden">
+          <div className="flex w-max items-center gap-[52px] animate-marquee lg:w-full lg:flex-nowrap lg:animate-none lg:justify-center">
+            {[...clients, ...clients].map((client, index) => (
+              <a
+                key={`${client.name}-${index}`}
+                href={client.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Instagram de ${client.name}`}
+                className={`block opacity-60 hover:opacity-100 transition-opacity duration-300 shrink-0 ${index >= clients.length ? 'lg:hidden' : ''}`}
+              >
+                <img
+                  src={client.image}
+                  alt={`Logo ${client.name}`}
+                  className="h-[35px] w-auto object-contain"
+                />
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>
