@@ -3,12 +3,36 @@
 import { motion } from 'framer-motion'
 
 const clients = [
-  { name: 'UFRJ', abbr: 'UFRJ' },
-  { name: 'Sandoz', abbr: 'SANDOZ' },
-  { name: 'PhysioPlace', abbr: 'PhysioPlace' },
-  { name: 'Workshop FMF', abbr: 'Workshop FMF' },
-  { name: 'Leidicio de Chiara', abbr: 'Leidicio de Chiara' },
-  { name: 'Gunther Kissmann', abbr: 'Gunther Kissmann' },
+  {
+    name: 'UFRJ',
+    image: 'https://medicgrowth.com.br/wp-content/uploads/2026/09/1_logo_ufrj.png',
+    href: 'https://www.instagram.com/ufrj.oficial/',
+  },
+  {
+    name: 'Sandoz',
+    image: 'https://medicgrowth.com.br/wp-content/uploads/2026/09/2_logo_sandoz.png',
+    href: 'https://www.instagram.com/sandozbrasil/',
+  },
+  {
+    name: 'Dra. Leticia',
+    image: 'https://medicgrowth.com.br/wp-content/uploads/2026/09/3_logo_dra_leticia.png',
+    href: 'https://www.instagram.com/draleticiadechiara/',
+  },
+  {
+    name: 'PhysioPlace',
+    image: 'https://medicgrowth.com.br/wp-content/uploads/2026/09/4_logo_physioplace.png',
+    href: 'https://www.instagram.com/physioplacerj/',
+  },
+  {
+    name: 'BV Dermatologia',
+    image: 'https://medicgrowth.com.br/wp-content/uploads/2026/09/5_logo_bv_dermatologia.png',
+    href: 'https://www.instagram.com/bvdermatologia/',
+  },
+  {
+    name: 'Dra. Iana Simão',
+    image: 'https://medicgrowth.com.br/wp-content/uploads/2026/09/6_logo_dra_iana_simao.png',
+    href: 'https://www.instagram.com/ianasimao/',
+  },
 ]
 
 export function Logos() {
@@ -22,25 +46,29 @@ export function Logos() {
           transition={{ duration: 0.5 }}
           className="text-center text-xs font-medium tracking-[0.2em] uppercase text-[#9CA3AF] mb-10"
         >
-          Confiaram no nosso trabalho
+          Clientes que já confiam
         </motion.p>
 
-        <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8">
+        <div className="flex flex-wrap items-center justify-center gap-10">
           {clients.map((client, i) => (
-            <motion.div
+            <motion.a
               key={client.name}
+              href={client.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Instagram de ${client.name}`}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0 }}
               transition={{ duration: 0.4, delay: i * 0.07 }}
-              className="group"
+              className="block opacity-50 hover:opacity-100 transition-opacity duration-300"
             >
-              <div className="px-5 py-3 rounded-lg border border-[#E8E6E0] bg-white grayscale hover:grayscale-0 transition-all duration-300 hover:border-[#C9A96E]/40 hover:shadow-sm">
-                <span className="text-[#9CA3AF] group-hover:text-[#0D2625] text-sm font-semibold tracking-wide transition-colors duration-300">
-                  {client.abbr}
-                </span>
-              </div>
-            </motion.div>
+              <img
+                src={client.image}
+                alt={`Logo ${client.name}`}
+                className="h-[55px] w-auto object-contain"
+              />
+            </motion.a>
           ))}
         </div>
       </div>

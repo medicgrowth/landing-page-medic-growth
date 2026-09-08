@@ -159,19 +159,45 @@ export function Hero() {
                 className="flex items-center gap-3"
               >
                 <div className="flex items-center pl-3" aria-label="Clientes da Medic Growth">
-                  <img
-                    src="https://medicgrowth.com.br/midias/perfil-clientes-medic-growth_one.png"
-                    alt="Cliente da Medic Growth"
-                    className="w-10 h-10 rounded-full object-cover border-2 border-[#0D2625] -ml-3"
-                  />
-                  <img
-                    src="https://medicgrowth.com.br/midias/perfil-clientes-medic-growth_two.png"
-                    alt="Cliente da Medic Growth"
-                    className="w-10 h-10 rounded-full object-cover border-2 border-[#0D2625] -ml-3"
-                  />
+                  <a
+                    href="https://www.instagram.com/draleticiadechiara/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram da Dra. Leticia"
+                  >
+                    <img
+                      src="https://medicgrowth.com.br/midias/perfil-clientes-medic-growth_one.png"
+                      alt="Dra. Leticia"
+                      className="w-10 h-10 rounded-full object-cover border-2 border-[#0D2625] -ml-3"
+                    />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/bvdermatologia/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram da BV Dermatologia"
+                  >
+                    <img
+                      src="https://medicgrowth.com.br/midias/perfil-clientes-medic-growth_two.png"
+                      alt="BV Dermatologia"
+                      className="w-10 h-10 rounded-full object-cover border-2 border-[#0D2625] -ml-3"
+                    />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/ianasimao/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram da Dra. Iana Simão"
+                  >
+                    <img
+                      src="https://medicgrowth.com.br/wp-content/uploads/2026/09/perfil-clientes-medic-growth-for.png"
+                      alt="Dra. Iana Simão"
+                      className="w-10 h-10 rounded-full object-cover border-2 border-[#0D2625] -ml-3"
+                    />
+                  </a>
                   <img
                     src="https://medicgrowth.com.br/midias/perfil-clientes-medic-growth_three.png"
-                    alt="Cliente da Medic Growth"
+                    alt="Mauricio"
                     className="w-10 h-10 rounded-full object-cover border-2 border-[#0D2625] -ml-3"
                   />
                 </div>
