@@ -184,6 +184,18 @@ export function Hero() {
                     />
                   </a>
                   <a
+                    href="https://www.instagram.com/physioplacerj/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram da PhysioPlace"
+                  >
+                    <img
+                      src="https://medicgrowth.com.br/midias/perfil-clientes-medic-growth_three.png"
+                      alt="PhysioPlace - Dr Mauricio"
+                      className="w-10 h-10 rounded-full object-cover border-2 border-[#0D2625] -ml-3"
+                    />
+                  </a>
+                  <a
                     href="https://www.instagram.com/ianasimao/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -195,11 +207,6 @@ export function Hero() {
                       className="w-10 h-10 rounded-full object-cover border-2 border-[#0D2625] -ml-3"
                     />
                   </a>
-                  <img
-                    src="https://medicgrowth.com.br/midias/perfil-clientes-medic-growth_three.png"
-                    alt="Mauricio"
-                    className="w-10 h-10 rounded-full object-cover border-2 border-[#0D2625] -ml-3"
-                  />
                 </div>
                 <p className="text-white/30 text-xs tracking-wide">A escolha de clínicas com mais de 30 anos de história.</p>
               </motion.div>
