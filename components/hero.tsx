@@ -158,29 +158,31 @@ export function Hero() {
                 transition={{ delay: 0.7 }}
                 className="flex items-center gap-3"
               >
-                <div className="flex items-center gap-2 pl-3" aria-label="Clientes da Medic Growth">
+                <div className="flex items-center pl-3" aria-label="Clientes da Medic Growth">
                   <a
                     href="https://www.instagram.com/draleticiadechiara/"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram da Dra. Leticia"
+                    className="relative z-10"
                   >
                     <img
                       src="https://medicgrowth.com.br/midias/perfil-clientes-medic-growth_one.png"
                       alt="Dra. Leticia"
-                      className="w-10 h-10 rounded-full object-cover border-2 border-[#0D2625]"
+                      className="w-10 h-10 rounded-full object-cover border-2 border-white first:ml-0 z-10"
                     />
                   </a>
                   <a
                     href="https://www.instagram.com/bvdermatologia/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Instagram da BV Dermatologia"
+aria-label="Instagram da BV Dermatologia"
+                    className="relative z-20"
                   >
                     <img
                       src="https://medicgrowth.com.br/midias/perfil-clientes-medic-growth_two.png"
                       alt="BV Dermatologia"
-                      className="w-10 h-10 rounded-full object-cover border-2 border-[#0D2625]"
+                      className="w-10 h-10 rounded-full object-cover border-2 border-white -ml-3 z-20"
                     />
                   </a>
                   <a
@@ -188,11 +190,12 @@ export function Hero() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram da PhysioPlace"
+                    className="relative z-30"
                   >
                     <img
                       src="https://medicgrowth.com.br/midias/perfil-clientes-medic-growth_three.png"
                       alt="PhysioPlace - Dr Mauricio"
-                      className="w-10 h-10 rounded-full object-cover border-2 border-[#0D2625]"
+                      className="w-10 h-10 rounded-full object-cover border-2 border-white -ml-3 z-30"
                     />
                   </a>
                   <a
@@ -200,11 +203,12 @@ export function Hero() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram da Dra. Iana Simão"
+                    className="relative z-40"
                   >
                     <img
                       src="https://medicgrowth.com.br/wp-content/uploads/2026/09/perfil-clientes-medic-growth-for.png"
                       alt="Dra. Iana Simão"
-                      className="w-10 h-10 rounded-full object-cover border-2 border-[#0D2625]"
+                      className="w-10 h-10 rounded-full object-cover border-2 border-white -ml-3 z-40"
                     />
                   </a>
                 </div>
