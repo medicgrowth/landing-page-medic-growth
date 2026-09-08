@@ -50,7 +50,7 @@ export function Logos() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Instagram de ${client.name}`}
-                className={`block opacity-60 hover:opacity-100 transition-opacity duration-300 shrink-0 ${index >= clients.length ? 'lg:hidden' : ''}`}
+                className={`flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity duration-300 shrink-0 ${index >= clients.length ? 'lg:hidden' : ''}`}
               >
                 <img
                   src={client.image}
