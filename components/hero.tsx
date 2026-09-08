@@ -158,7 +158,7 @@ export function Hero() {
                 transition={{ delay: 0.7 }}
                 className="flex items-center gap-3"
               >
-                <div className="flex items-center pl-3" aria-label="Clientes da Medic Growth">
+                <div className="flex items-center gap-2 pl-3" aria-label="Clientes da Medic Growth">
                   <a
                     href="https://www.instagram.com/draleticiadechiara/"
                     target="_blank"
@@ -168,7 +168,7 @@ export function Hero() {
                     <img
                       src="https://medicgrowth.com.br/midias/perfil-clientes-medic-growth_one.png"
                       alt="Dra. Leticia"
-                      className="w-10 h-10 rounded-full object-cover border-2 border-[#0D2625] -ml-3"
+                      className="w-10 h-10 rounded-full object-cover border-2 border-[#0D2625]"
                     />
                   </a>
                   <a
@@ -180,7 +180,7 @@ export function Hero() {
                     <img
                       src="https://medicgrowth.com.br/midias/perfil-clientes-medic-growth_two.png"
                       alt="BV Dermatologia"
-                      className="w-10 h-10 rounded-full object-cover border-2 border-[#0D2625] -ml-3"
+                      className="w-10 h-10 rounded-full object-cover border-2 border-[#0D2625]"
                     />
                   </a>
                   <a
@@ -192,7 +192,7 @@ export function Hero() {
                     <img
                       src="https://medicgrowth.com.br/midias/perfil-clientes-medic-growth_three.png"
                       alt="PhysioPlace - Dr Mauricio"
-                      className="w-10 h-10 rounded-full object-cover border-2 border-[#0D2625] -ml-3"
+                      className="w-10 h-10 rounded-full object-cover border-2 border-[#0D2625]"
                     />
                   </a>
                   <a
@@ -204,7 +204,7 @@ export function Hero() {
                     <img
                       src="https://medicgrowth.com.br/wp-content/uploads/2026/09/perfil-clientes-medic-growth-for.png"
                       alt="Dra. Iana Simão"
-                      className="w-10 h-10 rounded-full object-cover border-2 border-[#0D2625] -ml-3"
+                      className="w-10 h-10 rounded-full object-cover border-2 border-[#0D2625]"
                     />
                   </a>
                 </div>
