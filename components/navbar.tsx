@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, MessageCircle } from 'lucide-react'
 
 const navLinks = [
   { label: 'Quem Somos', href: '#quem-somos' },
@@ -79,16 +79,21 @@ export function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
-            <button
-              onClick={() => handleNavClick('#cta')}
+            <a
+              href="https://wa.me/5521975737591?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20para%20a%20minha%20cl%C3%ADnica."
+              target="_blank"
+              rel="noopener noreferrer"
               className={`text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-300 hover:scale-105 active:scale-95 ${
                 scrolled
                   ? 'bg-[#0D2625] text-white hover:bg-[#1a3d3b]'
                   : 'bg-white/10 text-white border border-white/30 hover:bg-white/20 backdrop-blur-sm'
               }`}
             >
-              Agendar Diagnóstico
-            </button>
+              <span className="inline-flex items-center gap-2">
+                <MessageCircle size={16} aria-hidden="true" />
+                Falar no Whatsapp
+              </span>
+            </a>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -129,12 +134,15 @@ export function Navbar() {
               ))}
             </nav>
             <div className="mt-auto">
-              <button
-                onClick={() => handleNavClick('#cta')}
-                className="w-full bg-white text-[#0D2625] font-semibold py-4 rounded-full text-base hover:bg-gray-100 transition-colors"
+              <a
+                href="https://wa.me/5521975737591?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20para%20a%20minha%20cl%C3%ADnica."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-white text-[#0D2625] font-semibold py-4 rounded-full text-base hover:bg-gray-100 transition-colors inline-flex items-center justify-center gap-2"
               >
-                Agendar Diagnóstico
-              </button>
+                <MessageCircle size={18} aria-hidden="true" />
+                Falar no Whatsapp
+              </a>
             </div>
           </motion.div>
         )}
