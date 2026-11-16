@@ -4,6 +4,42 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, MessageCircle } from 'lucide-react'
+import { useLanguage } from '@/components/language-provider'
+
+function LanguageSwitcher({ inverse = false }: { inverse?: boolean }) {
+  const { language, setLanguage } = useLanguage()
+
+  return (
+    <div className={`inline-flex items-center gap-1 rounded-full border p-1 ${inverse ? 'border-white/20 bg-white/5' : 'border-[#E8E6E0] bg-white'}`} aria-label="Seleccionar idioma / Selecionar idioma">
+      {(['pt', 'es'] as const).map((locale) => (
+        <button
+          key={locale}
+          type="button"
+          onClick={() => setLanguage(locale)}
+          aria-label={locale === 'pt' ? 'Português' : 'Español de España'}
+          aria-pressed={language === locale}
+          className={`flex items-center gap-1.5 rounded-full px-2 py-1 text-[10px] font-semibold tracking-wide transition-colors ${
+            language === locale
+              ? inverse ? 'bg-white/15 text-white' : 'bg-[#0D2625] text-white'
+              : inverse ? 'text-white/60 hover:text-white' : 'text-[#6B7280] hover:text-[#0D2625]'
+          }`}
+        >
+          <span
+            aria-hidden="true"
+            className={`relative inline-flex h-3.5 w-3.5 shrink-0 overflow-hidden rounded-full border ${inverse ? 'border-white/25' : 'border-black/10'} ${locale === 'pt' ? 'bg-[#159447]' : 'bg-[#AA151B]'}`}
+          >
+            {locale === 'pt' ? (
+              <span className="absolute left-[3px] top-[3px] h-2 w-2 rotate-45 bg-[#FFDF00]" />
+            ) : (
+              <span className="absolute inset-x-0 top-[4px] h-[5px] bg-[#F1BF00]" />
+            )}
+          </span>
+          {locale.toUpperCase()}
+        </button>
+      ))}
+    </div>
+  )
+}
 
 const navLinks = [
   { label: 'Quem Somos', href: '#quem-somos' },
@@ -13,6 +49,7 @@ const navLinks = [
 ]
 
 export function Navbar() {
+  const { language } = useLanguage()
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
 
@@ -63,7 +100,7 @@ export function Navbar() {
           </a>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8" aria-label="Navegação principal">
+          <nav className="hidden lg:flex items-center gap-8" aria-label="Navegação principal">
             {navLinks.map((link) => (
               <button
                 key={link.href}
@@ -78,7 +115,7 @@ export function Navbar() {
           </nav>
 
           {/* CTA Button */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-4">
             <a
               href="https://wa.me/5521975737591?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20para%20a%20minha%20cl%C3%ADnica."
               target="_blank"
@@ -94,10 +131,13 @@ export function Navbar() {
                 Falar no Whatsapp
               </span>
             </a>
+            <LanguageSwitcher inverse={!scrolled} />
           </div>
 
-          {/* Mobile Menu Toggle */}
-          <button
+          <div className="lg:hidden flex items-center gap-2">
+            <LanguageSwitcher inverse={!scrolled} />
+            {/* Mobile Menu Toggle */}
+            <button
             className={`md:hidden p-2 rounded-lg transition-colors ${
               scrolled ? 'text-[#111111] hover:bg-gray-100' : 'text-white hover:bg-white/10'
             }`}
@@ -105,7 +145,8 @@ export function Navbar() {
             aria-label={mobileOpen ? 'Fechar menu' : 'Abrir menu'}
           >
             {mobileOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
+            </button>
+          </div>
         </div>
       </motion.header>
 

@@ -4,7 +4,7 @@ interface FadeInProps {
   children: React.ReactNode
   className?: string
   delay?: number
-  direction?: 'up' | 'none'
+  direction?: 'up' | 'none' | 'left' | 'right'
   duration?: number
 }
 

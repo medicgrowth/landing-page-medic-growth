@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ArrowRight, TrendingUp, Users, Calendar, BarChart3 } from 'lucide-react'
+import { useLanguage } from '@/components/language-provider'
 
 const floatingCards = [
   {
@@ -49,6 +50,7 @@ function AnimatedCounter({ value, suffix = '' }: { value: number; suffix?: strin
 }
 
 export function Hero() {
+  const { language } = useLanguage()
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -242,7 +244,7 @@ aria-label="Instagram da BV Dermatologia"
                   {[
                     { label: 'Leads', value: '308', delta: '+24%' },
                     { label: 'Agendamentos', value: '41', delta: '+18%' },
-                    { label: 'Faturamento', value: 'R$180k', delta: '+210%' },
+                    { label: 'Faturamento', value: language === 'es' ? '31.450 €' : 'R$180k', delta: '+210%' },
                     { label: 'ROI', value: '17x', delta: '+3x' },
                   ].map((m) => (
                     <div key={m.label} className="bg-white/5 rounded-xl p-3">
@@ -289,7 +291,7 @@ aria-label="Instagram da BV Dermatologia"
                 className="absolute -top-6 -right-6 bg-white rounded-2xl shadow-2xl px-4 py-3 border border-[#E8E6E0]"
               >
                 <p className="text-[#6B7280] text-xs">Investimento</p>
-                <p className="text-[#0D2625] font-bold text-xl">R$10.434</p>
+                <p className="text-[#0D2625] font-bold text-xl">{language === 'es' ? '1.850 €' : 'R$10.434'}</p>
                 <p className="text-green-600 text-xs font-medium">↑ ROI 17x</p>
               </motion.div>
 
@@ -300,7 +302,7 @@ aria-label="Instagram da BV Dermatologia"
                 className="absolute -bottom-6 -left-8 bg-[#0D2625] rounded-2xl shadow-2xl px-4 py-3"
               >
                 <p className="text-white/50 text-xs">Faturamento gerado</p>
-                <p className="text-white font-bold text-xl">R$180.560</p>
+                <p className="text-white font-bold text-xl">{language === 'es' ? '31.450 €' : 'R$180.560'}</p>
                 <p className="text-[#C9A96E] text-xs font-medium">Médica Dermatologista</p>
               </motion.div>
             </div>
@@ -317,7 +319,7 @@ aria-label="Instagram da BV Dermatologia"
               { label: 'ROI médio', value: '17x', icon: TrendingUp },
               { label: 'Leads/mês', value: '+308', icon: Users },
               { label: 'Agendamentos', value: '+41', icon: Calendar },
-              { label: 'Faturamento', value: 'R$180k', icon: BarChart3 },
+              { label: 'Faturamento', value: language === 'es' ? '31.450 €' : 'R$180k', icon: BarChart3 },
             ].map((item) => (
               <div key={item.label} className="bg-white/5 border border-white/10 rounded-xl p-4">
                 <item.icon size={18} className="text-[#C9A96E] mb-2" />

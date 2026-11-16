@@ -3,6 +3,7 @@
 import { useRef, useEffect, useState } from 'react'
 import { FadeIn } from '@/components/fade-in'
 import { TrendingUp, Users, Calendar, DollarSign, Zap } from 'lucide-react'
+import { useLanguage } from '@/components/language-provider'
 
 function useCountUp(target: number, duration = 1.5, start = false) {
   const [count, setCount] = useState(0)
@@ -41,6 +42,7 @@ const chartData = [
 ]
 
 export function Case() {
+  const { language } = useLanguage()
   const ref = useRef<HTMLDivElement>(null)
   const [inView, setInView] = useState(false)
 
@@ -126,11 +128,11 @@ export function Case() {
                 >
                   <metric.icon size={16} className={`${metric.color} mb-3 opacity-70`} />
                   <p className="font-bold text-2xl text-white mb-1">
-                    {metric.prefix}
-                    {metric.value >= 1000
-                      ? counts[i].toLocaleString('pt-BR')
-                      : counts[i]}
-                    {metric.suffix}
+                    {language === 'es' && metric.value === 10434
+                      ? '1.850 €'
+                      : language === 'es' && metric.value === 180560
+                        ? '31.450 €'
+                        : <>{metric.prefix}{metric.value >= 1000 ? counts[i].toLocaleString('pt-BR') : counts[i]}{metric.suffix}</>}
                   </p>
                   <p className="text-white/40 text-xs leading-snug">{metric.label}</p>
                 </div>
